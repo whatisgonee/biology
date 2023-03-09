@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Биология</title>
+		<link rel="stylesheet" type="text/css" href="./css/bio.css">
+		<link rel="icon" type="image/x-icon" href="macrobgless.png">
+	</head>
+
+	<body>
+		<div id="content">
+			<div id="header">
+				<h1 style="position:fixed;left:200px;"><a href="index.html"><span style="color:lightgreen;">Bio</span><span style="color:lightcoral;">logy</span></a></h1>
+
+				<a class="menu-link" id="linkOne" href="index.html" name="main" onmouseover="headerLink(this)" onmouseleave="headerLeave()">Главная</a>
+				<a class="menu-link" id="linkTwo" href="about.html" name="about" onmouseover="headerLink(this)" onmouseleave="headerLeave()">О проекте</a>
+				<a class="menu-link" id="linkThree" href="menu.html" name="menu" onmouseover="headerLink(this)" onmouseleave="headerLeave()">Меню</a>
+			</div>
+
+			<div id="menu" onmouseover="menuKeep()" onmouseleave="headerLeave()">
+				
+			</div>
+
+			<div id="main">
+				<h1 id="all">Все страницы</h1>
+				<p>Все страницы на сайте на данный момент.
+					<ul>
+						<li><a href="immune.html">Иммуная система человека</a></li>
+						<li><a href="stroke.html">Инсульт</a></li>
+					</ul>
+				</p>
+
+				<hr>
+
+				<h1 id="gallery">Галлерея</h1>
+
+				<div style="display: flex; justify-content: center;align-items: center; flex-direction: column;">
+					
+					<img src="./media/macro.png">
+					<img src="./media/neutro.png">
+					<img src="./media/phagocytosis1.png">
+					<img src="./media/phagocytosis2.png">
+					<img src="./media/system.png">
+
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		var menu = document.getElementById("menu")
+
+		var links = {
+			"main": `<a href="index.html#what" onmouseleave="headerLeave()">Что?</a><a href="index.html#where" onmouseleave="headerLeave()">Где?</a><a href="index.html#more" onmouseleave="headerLeave()">Еще...</a>`,
+			"about": `<a href="about.html#about" onmouseleave="headerLeave()">О проекте</a>`,
+			"menu": `<a href="menu.html#all" onmouseleave="headerLeave()">Все страницы</a><a href="menu.html#gallery">Галлерея</a>`
+		}
+
+		var colors = {
+			"main": "lightgreen",
+			"about": "#7aaddb",
+			"menu": "lightcoral"
+		}
+
+		let lastHovered = ""
+
+		function headerLink(e) {
+			console.log(e.name)
+			menu.style.height = "60px"
+			lastHovered = e.name
+			menu.style.backgroundColor = colors[e.name]
+			menu.innerHTML = links[e.name]
+		}
+
+		function menuKeep() {
+			menu.style.height = "60px"
+			menu.innerHTML = links[lastHovered]
+		}
+
+		function headerLeave() {
+			menu.style.height = "0px"
+			menu.style.backgroundColor = "darkcyan"
+			// menu.innerHTML = ""
+		}
+	</script>
+</html>

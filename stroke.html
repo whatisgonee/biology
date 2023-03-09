@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Биология</title>
+		<link rel="stylesheet" type="text/css" href="./css/bio.css">
+		<link rel="icon" type="image/x-icon" href="macrobgless.png">
+	</head>
+
+	<body>
+		<div id="content">
+			<div id="header">
+				<h1 style="position:fixed;left:200px;"><a href="index.html"><span style="color:lightgreen;">Bio</span><span style="color:lightcoral;">logy</span></a></h1>
+
+				<a class="menu-link" id="linkOne" href="index.html" name="main" onmouseover="headerLink(this)" onmouseleave="headerLeave()">Главная</a>
+				<a class="menu-link" id="linkTwo" href="about.html" name="about" onmouseover="headerLink(this)" onmouseleave="headerLeave()">О проекте</a>
+				<a class="menu-link" id="linkThree" href="menu.html" name="menu" onmouseover="headerLink(this)" onmouseleave="headerLeave()">Меню</a>
+			</div>
+
+			<div id="menu" onmouseover="menuKeep()" onmouseleave="headerLeave()">
+				
+			</div>
+
+			<div id="main">
+				<h1>Инсульт</h1>
+				
+				<p>Инсульт - это серьезное медицинское состояние, при котором часть вашего мозга теряет кровоток, что может привести к некрозу (отмиранию ткани) и невозвратимиых повреждений. Для того, чтобы предостеречь себя и близких от инсульта и правильно распознать его симптомы, для начала нужно разобраться как именно он происходит.</p>
+
+				<hr>
+
+				<h1>Тромбоциты и тромбы</h1>
+
+				<p>Тромбоциты, это маленькие (2-9 мкм) клетки, которые находятся в вашей кровяной системе. Их основная задача - починка поврежденных кровянных сосудов. Они играют важную роль в гемостазе или свертывание крови и без них, даже небольшая ранка привела бы к большому потери крови.</p>
+
+				<p>Когда тромбоциты находят повреждение в стенках сосуда, они приклеиваются к ним и активируют специальный белок фибрин. При обычных условиях, фибрин находится в кровенсной системе в жидкой форме, однако тромбоциты могут активировать его. При активации, данный белок превращается в нерастворяемые нити и склеивают тромбоцитов. После чего, рана заживает, а тромбоциты остаются на месте на всю оставшуюся жизнь.</p>
+
+				<p>Но существуют ситуации, когда тромбоциты могут образовать тромб, который затем отделяется от стенки сосуда и течет по кровяносной системе. Все больше и больше клеток, теперь не только тромбоциты, но и обычных кровянные тельца, налепливаются к сгустку крови, активируя больше фибрина и склеивая себе крепче. Если этот сгусток нерастворится засчет анти-коагуляционной системе (система, которая отвечает за "развертывание" крови для предотвращения таких ситуаций), то дойдя до ЦНС (Центральной Нервной Системы), может случиться инсульт.</p>
+
+				<p>Сгусток крови доходит до каппиляров нашего мозга, самых узких сосудов нашего тела, и блокирует проход. Кровь не может пройти через эту массу, часть мозга остается без кислорода и в начале начинает использовать анаэробное дыхание, а затем отмирает.</p>
+
+				<hr>
+
+				<h1>Симптомы</h1>
+
+				<p>Если вы знаете английский, то существует простая мнемоника для запоминания симптомов инсульта - <strong>FAST</strong>.
+					<ul>
+						<li><strong>F</strong>ace (лицо)</li>
+						<li><strong>A</strong>rms (Руки)</li>
+						<li><strong>S</strong>peech (Речь)</li>
+						<li><strong>T</strong>time (Время)</li>
+					</ul>
+					Первое слово - лицо. Если вы подозреваете что вы или какой-либо другой человек страдает инсультом, попробуйте улыбнуться. При инсульте, часть вашего лица будет расслаблена, ваша улыбка будет односторонней.
+					<br><br>
+					Второе слово - руки. Поднимите руки над вашей головой. Как и с улыбкой, одна из ваших рук не сможет подняться выше вашей головы.
+					<br><br>
+					Третье слово - речь. Если речь челвоека неразборчива, он бубнит или не может выговаривать слово, это еще один признак инсульта.
+					<br><br>
+					Четвертое слово - время. Когда вы убедились, что все симптомы совпадают с теми, что и инсульта, незамедлительно звоните в службу спасения или скорую.
+				</p>
+
+				<hr>
+
+
+				<a href="#main"><h1>Наверх</h1></a>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		var menu = document.getElementById("menu")
+
+		var links = {
+			"main": `<a href="index.html#what" onmouseleave="headerLeave()">Что?</a><a href="index.html#where" onmouseleave="headerLeave()">Где?</a><a href="index.html#more" onmouseleave="headerLeave()">Еще...</a>`,
+			"about": `<a href="about.html#about" onmouseleave="headerLeave()">О проекте</a>`,
+			"menu": `<a href="menu.html#all" onmouseleave="headerLeave()">Все страницы</a><a href="menu.html#gallery">Галлерея</a>`
+		}
+
+		var colors = {
+			"main": "lightgreen",
+			"about": "#7aaddb",
+			"menu": "lightcoral"
+		}
+
+		let lastHovered = ""
+
+		function headerLink(e) {
+			console.log(e.name)
+			menu.style.height = "60px"
+			lastHovered = e.name
+			menu.style.backgroundColor = colors[e.name]
+			menu.innerHTML = links[e.name]
+		}
+
+		function menuKeep() {
+			menu.style.height = "60px"
+			menu.innerHTML = links[lastHovered]
+		}
+
+		function headerLeave() {
+			menu.style.height = "0px"
+			menu.style.backgroundColor = "darkcyan"
+			// menu.innerHTML = ""
+		}
+	</script>
+</html>

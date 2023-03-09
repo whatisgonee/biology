@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Биология</title>
+		<link rel="stylesheet" type="text/css" href="./css/bio.css">
+		<link rel="icon" type="image/x-icon" href="macrobgless.png">
+	</head>
+
+	<body>
+		<div id="content">
+			<div id="header">
+				<h1 style="position:fixed;left:200px;"><a href="index.html"><span style="color:lightgreen;">Bio</span><span style="color:lightcoral;">logy</span></a></h1>
+
+				<a class="menu-link" id="linkOne" href="index.html" name="main" onmouseover="headerLink(this)" onmouseleave="headerLeave()">Главная</a>
+				<a class="menu-link" id="linkTwo" href="about.html" name="about" onmouseover="headerLink(this)" onmouseleave="headerLeave()">О проекте</a>
+				<a class="menu-link" id="linkThree" href="menu.html" name="menu" onmouseover="headerLink(this)" onmouseleave="headerLeave()">Меню</a>
+			</div>
+
+			<div id="menu" onmouseover="menuKeep()" onmouseleave="headerLeave()">
+				
+			</div>
+
+			<div id="main">
+				<h1>Иммунная система</h1>
+				<p><img src="./media/system2.png" style="float:left" width="800em">
+
+				Ваша иммунная система - это вторая, по сложности, систем человеческого тела. На первом месте, конечно же, стоит ваша нервная система. Однако иммунитет (хоть более правильно сказать иммуная система) не отсутпает по запутаности и неизученности. Но чтобы понять ее не нужно быть гением. Здесь рассказывается о самых важных клетках вашей иммуной системы.</p>
+
+				<hr>
+				
+				<h1>Макрофаг: носорог тела</h1>
+				<p><img src="./media/macro.png" style="float:right" width="400em">
+
+				Одна из самых больших клеток вашего организма - это макрофаг. Макрофаг имеет амебоидный вид, т.е. у макрофаг есть шупальца или "псевдоподы". Благодаря этим щупальцам макрофаг может хватать бактерий и вирусов. Но обо всем по порядку.<br><br>
+				На картинке справа представлен макрофаг. Красным выделенны его псевдоподы (щупальца). Макрофаг - это ваш солдат. Самый обычный, ничем не отличающийся. В данный момент, миллионы макрофагов патрулируют разные части вашего тела. В случае инфекции, они первыми придут на помощь и незамедлительно начнут пожирать бактерий и вирусов.</p>
+
+				<p>Как именно макрофаг "пожирает" микробов? Очень просто, в буквальном смысле! <img src="./media/phagocytosis1.png" width="400em" style="float:left"> В начале, макрофаг находит врагов, после чего он растягивает свои "щупальца" и хватается за микробов. Однако, большинство патогенных микробов "скользкие" и поэтому нашему солдату не сразу удаается за них хорошенько зацепиться. После нескольких неудачных попыток, макрофаг хваатется за бактерию и проглатывает ее в свою внутреннюю мембрану. <img src="./media/phagocytosis2.png" style="float:right" width="500em">После того как бактерия попадает в цитопламу макрофага, ее обвалакивает специальная везикула - небольшой мещочек который отделяет вещества от внутренней среды клетки. Бактерия никак не может двигаться, к ее везикуле подплывают лизосомы, в которых находится кислота. Бактерия расстворяется и расщепляется на отдельные компоненты - белки, углеводы и жиры. Часть полезных веществ макрофаг переваривает, остаток выбрасывает наружу для того, чтобы ускорить восстановление "гражданских" или соматических клеток.</p>
+
+				<hr>
+
+				<h1>Нейтрофил: дикарь на поле боя</h1>
+
+				<p><img src="./media/neutro.png" width="400em" style="float:left">К полю битву подспевает подмога в виде нейтрофилов. Нейтрофилы, в сравнении с огромными макрофагами, довольно малы. Их размер составляет в среднем 12-15 микрометров (макрофаг же 21 микрометр). Однако эти солдаты невероятно опасны, настолько, что они погибают естественным путем (апоптозом) несколько дней после их рождения. Это заложенно в их ДНК для того, чтобы защитить наш собственный организм. Но почему они настолько опасны? Не уж то они могут убить и ваши клетки?</p>
+
+				<p>Чтобы разобраться, давайте посмотрим на строение нейтрофила. Нейтрофил, как и все клетки вашего организма, содержит определенные органеллы. Эти органеллы могут быть большими, как например ядро, или невероятно маленькими, как рибосомы, которые отвечают за производство белков. Но нейтрофил также наделен особым видом органелл - гранулами. Эти гранулы, на подобии маленьких мещочков, содержат кислоту, наподобие вашей желудочной, которую нейтрофил использует для уничтожения патогенов.</p>
+
+				<p>Кислота разъедает не только микробов, но и ваши собственные, мирные клетки, что приводит к значительным повреждениям на поле битвы.</p>
+
+				<hr>
+
+				<a href="#main"><h1>Наверх</h1></a>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		var menu = document.getElementById("menu")
+
+		var links = {
+			"main": `<a href="index.html#what" onmouseleave="headerLeave()">Что?</a><a href="index.html#where" onmouseleave="headerLeave()">Где?</a><a href="index.html#more" onmouseleave="headerLeave()">Еще...</a>`,
+			"about": `<a href="about.html#about" onmouseleave="headerLeave()">О проекте</a>`,
+			"menu": `<a href="menu.html#all" onmouseleave="headerLeave()">Все страницы</a><a href="menu.html#gallery">Галлерея</a>`
+		}
+
+		var colors = {
+			"main": "lightgreen",
+			"about": "#7aaddb",
+			"menu": "lightcoral"
+		}
+
+		let lastHovered = ""
+
+		function headerLink(e) {
+			console.log(e.name)
+			menu.style.height = "60px"
+			lastHovered = e.name
+			menu.style.backgroundColor = colors[e.name]
+			menu.innerHTML = links[e.name]
+		}
+
+		function menuKeep() {
+			menu.style.height = "60px"
+			menu.innerHTML = links[lastHovered]
+		}
+
+		function headerLeave() {
+			menu.style.height = "0px"
+			menu.style.backgroundColor = "darkcyan"
+			// menu.innerHTML = ""
+		}
+	</script>
+</html>

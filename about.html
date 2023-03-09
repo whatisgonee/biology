@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Биология</title>
+		<link rel="stylesheet" type="text/css" href="./css/bio.css">
+		<link rel="icon" type="image/x-icon" href="macrobgless.png">
+	</head>
+
+	<body>
+		<div id="content">
+			<div id="header">
+				<h1 style="position:fixed;left:200px;"><a href="index.html"><span style="color:lightgreen;">Bio</span><span style="color:lightcoral;">logy</span></a></h1>
+
+				<a class="menu-link" id="linkOne" href="index.html" name="main" onmouseover="headerLink(this)" onmouseleave="headerLeave()">Главная</a>
+				<a class="menu-link" id="linkTwo" href="about.html" name="about" onmouseover="headerLink(this)" onmouseleave="headerLeave()">О проекте</a>
+				<a class="menu-link" id="linkThree" href="menu.html" name="menu" onmouseover="headerLink(this)" onmouseleave="headerLeave()">Меню</a>
+			</div>
+
+			<div id="menu" onmouseover="menuKeep()" onmouseleave="headerLeave()">
+				
+			</div>
+
+			<div id="main">
+				<h1 id="about">О проекте</h1>
+				<p>Проект был создан учеником 10 класса для урока информатики в школе лицей номер 1, г. Астана, Казахстан. Все права защищены (c).</p>
+
+				<div style="display: flex; gap: 150px">
+					<div style="width: 60%">
+						<h1 id="where">Где?</h1>
+						<p>Здесь вы можете начать свое приключение в науку биологии. Предложенный список статей на сайте:
+							<ul>
+								<li><a href="immune.html">Иммуная система человека</a></li>
+								<li><a href="stroke.html">Инсульт</a></li>
+							</ul>
+						</p>
+					</div>
+
+					<div style="width:50%">
+						<h1 id="more">Еще...</h1>
+						<p>
+							Если ваш голод к знаниям все еще ненасытен, ниже приведен список интернет-ресурсов, которые продвинут ваши знания биологии.
+						
+							<ul>
+								<li><a target="_blank" href="https://youtube.com/playlist?list=PLFs4vir_WsTyY31efyHdmtp9l7DpR0Wvi">Kurzgesagt</a></li>
+								<li><a target="_blank" title="Платный" href="https://www.goodreads.com/book/show/57423646-immune">Immune: a Journey into the Mysterious System that Keeps You Alive*</li>
+								<li><a target="_blank" href="https://youtube.com/playlist?list=PL2EcSi9HPvO-4xumVJANK7VoixK84sb66">General Microbiology</a></li>
+							</ul>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		var menu = document.getElementById("menu")
+
+		var links = {
+			"main": `<a href="index.html#what" onmouseleave="headerLeave()">Что?</a><a href="index.html#where" onmouseleave="headerLeave()">Где?</a><a href="index.html#more" onmouseleave="headerLeave()">Еще...</a>`,
+			"about": `<a href="about.html#about" onmouseleave="headerLeave()">О проекте</a>`,
+			"menu": `<a href="menu.html#all" onmouseleave="headerLeave()">Все страницы</a><a href="menu.html#gallery">Галлерея</a>`
+		}
+
+		var colors = {
+			"main": "lightgreen",
+			"about": "#7aaddb",
+			"menu": "lightcoral"
+		}
+
+		let lastHovered = ""
+
+		function headerLink(e) {
+			console.log(e.name)
+			menu.style.height = "60px"
+			lastHovered = e.name
+			menu.style.backgroundColor = colors[e.name]
+			menu.innerHTML = links[e.name]
+		}
+
+		function menuKeep() {
+			menu.style.height = "60px"
+			menu.innerHTML = links[lastHovered]
+		}
+
+		function headerLeave() {
+			menu.style.height = "0px"
+			menu.style.backgroundColor = "darkcyan"
+			// menu.innerHTML = ""
+		}
+	</script>
+</html>
